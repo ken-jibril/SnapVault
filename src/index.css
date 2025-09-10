@@ -1,28 +1,47 @@
+/* General page setup */
 body {
   background-color: whitesmoke;
+  margin: 0; /* reset default spacing */
+  font-family: Arial, sans-serif;
+
+  /* Center everything in the viewport */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* full screen height */
+  flex-direction: column; /* keeps h1 on top, box below */
 }
+
 h1 {
   color: darkblue;
   text-align: center;
-  font-family: Arial, sans-serif;
   font-size: 3em;
+  margin-bottom: 20px; /* spacing before the blue box */
 }
+
+/* Main signup box */
 .wrapper {
-  display: grid;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 20px;
   background-color: navy;
-  width: 40%;
+  width: 60%;
+  height: auto;
   border-radius: 10px;
+  margin: 0 auto; /* horizontal centering */
 }
+
+/* Signup section inside */
 .sign-up {
   display: flex;
   flex-direction: column;
   padding: 10px;
   gap: 10px;
+  width: 100%; /* so children can expand */
 }
+
 .sign-up h2 {
   margin: 0;
   color: whitesmoke;
@@ -30,27 +49,84 @@ h1 {
   text-align: center;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
 .sign-up label {
   font-size: 1.7em;
-  display: flex;
-  justify-content: left;
-  align-items: flex-start;
   color: white;
+  text-align: left;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
 .sign-up input {
   font-size: 1.7em;
   border-radius: 6px;
-  padding: 8px 30px;
-  text-align: left;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  padding: 10px;
   border: none;
+  width: 100%; /* stretch full width */
+  box-sizing: border-box; /* prevent overflow */
 }
+
 .sign-up button {
   background-color: white;
-  padding: 10px 20px;
+  padding: 12px;
   font-weight: bold;
   font-size: 1em;
   border-radius: 7px;
   border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: 100%; /* stretch full width */
+}
+
+.sign-up button:hover {
+  background-color: lightgray;
+}
+
+/* 🌐 Responsive Design */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .wrapper {
+    width: 80%;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  .sign-up h2 {
+    font-size: 2em;
+  }
+
+  .sign-up label,
+  .sign-up input {
+    font-size: 1.2em;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .wrapper {
+    width: 95%;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  .sign-up h2 {
+    font-size: 1.5em;
+  }
+
+  .sign-up label,
+  .sign-up input {
+    font-size: 1em;
+  }
+
+  .sign-up button {
+    font-size: 0.9em;
+    padding: 10px;
+  }
 }

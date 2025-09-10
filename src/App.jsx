@@ -1,15 +1,17 @@
-// import Login from "./Components/LogIn"
-import Signup from "./Components/SignUp"
+import { Routes, Route } from "react-router-dom";
+import Login from "./Components/Login";
+import SignUp from "./Components/SignUp";
 
 function App() {
-
   return (
-    <>
-    <h1>Hello there from SnapVault 📸</h1>
-    <Signup />
-    {/* <Login /> */}
-    </>
-  )
+    <Routes>
+      {/* Sign Up page at root */}
+      <Route path="/" element={<SignUp />} />
+
+      {/* Login page */}
+      <Route path="/login" element={<Login />} />
+    </Routes>
+  );
 }
 
-export default App
+export default App;
